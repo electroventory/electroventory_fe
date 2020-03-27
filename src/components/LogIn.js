@@ -2,7 +2,6 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-
 function handleSubmit(event) {
     event.preventDefault();
     const email = event.target.elements.email.value;

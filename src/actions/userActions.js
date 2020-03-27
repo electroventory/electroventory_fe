@@ -1,6 +1,6 @@
 import userConstants from '../constants/userConstants';
 import userService from '../services/userService';
-import alertActions from '../actions/alertActions';
+import alertActions from './alertActions';
 
 function login(username, password) {
 

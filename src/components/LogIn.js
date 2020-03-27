@@ -1,35 +1,33 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import Form from './Form';
 
 
-function handleSubmit(event) {
+function onSubmitCallback(event) {
     event.preventDefault();
     const username = event.target.elements.username.value;
     const password = event.target.elements.password.value;
     console.log("POST /login", username, password);
 };
-
+const schema = {
+    username: {
+        controlId: "username",
+        label: "Username",
+        inputType: "text"
+    },
+    password: {
+        controlId: "password",
+        label: "Password",
+        inputType: "password"
+    }
+};
 
 function LogIn() {
     return (
-        <>
-            <h5>Log in</h5>
-            <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="username">
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control type="text" />
-                    <Form.Text className="text-muted" />
-                </Form.Group>
-                <Form.Group controlId="password">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Log in
-                </Button>
-            </Form>
-        </>
+        <Form
+            onSubmitCallback={onSubmitCallback}
+            schema={schema}
+            submitText="Log In"
+        />
     )
 }
 

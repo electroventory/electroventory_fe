@@ -5,9 +5,9 @@ import Button from 'react-bootstrap/Button';
 
 function handleSubmit(event) {
     event.preventDefault();
-    const email = event.target.elements.email.value;
+    const username = event.target.elements.username.value;
     const password = event.target.elements.password.value;
-    console.log("POST /login", email, password);
+    console.log("POST /login", username, password);
 };
 
 
@@ -16,14 +16,14 @@ function LogIn() {
         <>
             <h5>Log in</h5>
             <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="email">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                <Form.Group controlId="username">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control type="text" />
                     <Form.Text className="text-muted" />
                 </Form.Group>
                 <Form.Group controlId="password">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control type="password" />
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Log in

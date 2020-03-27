@@ -13,14 +13,24 @@ function SignUp() {
         <>
             <h5>Create a new user</h5>
             <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                <Form.Group controlId="username">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control type="username" />
                     <Form.Text className="text-muted" />
                 </Form.Group>
-                <Form.Group controlId="formBasicPassword">
+                <Form.Group controlId="email">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control type="email"/>
+                    <Form.Text className="text-muted" />
+                </Form.Group>
+                <Form.Group controlId="password">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control type="password" />
+                    <Form.Text className="text-muted" />
+                </Form.Group>
+                <Form.Group controlId="passwordConfirmation">
+                    <Form.Label>Confirm your password</Form.Label>
+                    <Form.Control type="password"/>
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Sign up
